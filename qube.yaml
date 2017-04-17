@@ -1,0 +1,32 @@
+id: 2de1476e-66da-4836-8f45-c99a9cb3be7e
+version: v2
+name: omarslacktest
+apptype: api
+language: java
+containerName: omarslacktest
+toolchain:
+  id: 58ed21e69839e2001ec7ca39
+  name: Qubeship-Java-Toolchain
+opinion:
+  id: 58dee5e3e2a801000e8cb43b
+  name: build_bake_test_deployment:v0.1
+endpoint:
+  id: 58ed21e899fd82000b7230e5
+  name: Qubeship Sandbox Cluster
+  type: target
+variables:
+  - name: APP_VERSION
+    value: v0.1
+build:
+  compile:
+    publish:
+     - target/
+bake:
+  skip: false
+test:
+  skip: true
+deploy_to_qa:
+  skip: true
+deploy_to_prod:
+  skip: false
+
